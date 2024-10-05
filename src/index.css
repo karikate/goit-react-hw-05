@@ -1,4 +1,91 @@
 :root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  color: blue;
+}
+/* src/index.css */
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+.wrapperPosts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  .outlet {
+    min-height: 30vh;
+    width: 100%;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  --color-red: red;
+}
+.global {
+  text-decoration: underline;
+}
+.flex {
+  justify-content: center;
+  display: flex;
+  gap: 20px;
+}
+.header {
+  background-color: teal;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.btn {
+  padding: 10px 22px;
+  border-radius: 4px;
+  border: none;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-size: 2.5rem;
+  border: 1px solid black;
+
+  &:hover {
+    background-color: #091ec2;
+    color: white;
+  }
+}
+
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -11,6 +98,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -24,10 +113,12 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  padding: 0;
+  width: 100%;
+  display: flex; 
+  place-items: center; 
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100vh; 
 }
 
 h1 {
@@ -65,4 +156,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
