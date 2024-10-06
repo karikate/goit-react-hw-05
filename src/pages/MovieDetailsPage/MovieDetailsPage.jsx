@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 import { fetchMoviesById } from "../../servises/api";
 import s from "./MovieDetailsPage.module.css";
 
@@ -9,6 +9,8 @@ const MovieDetailsPage = () => {
 
   const { movieId } = useParams();
   const [movie, setMovie] = useState();
+  const location = useLocation();
+  const refGoBack = useRef(location.state);
   useEffect(() => {
     if (!movieId) return;
     const getMoviesById = async () => {
@@ -23,6 +25,7 @@ const MovieDetailsPage = () => {
   }
   return (
     <div>
+      <Link to={refGoBack.current}>Go back</Link>
       <img
         src={
           movie.poster_path
