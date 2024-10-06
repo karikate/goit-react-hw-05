@@ -5,7 +5,10 @@ import { useParams } from "react-router-dom";
 const MovieCast = () => {
   const { movieId } = useParams();
   const [casts, setCast] = useState([]);
+  const defaultImg =
+    "https://dummyimage.com/400x600/cdcdcd/000.jpg&text=No+poster";
   useEffect(() => {
+    if (!movieId) return;
     const getCastById = async () => {
       const data = await fetchCastById(movieId);
       setCast(data);
@@ -17,9 +20,17 @@ const MovieCast = () => {
       <ul>
         {casts.map((cast) => (
           <li key={cast.id}>
-            <img src="" alt="" />
+            <img
+              src={
+                cast.profile_path
+                  ? `https://image.tmdb.org/t/p/w500/${cast.profile_path}`
+                  : defaultImg
+              }
+              width={250}
+              alt="poster"
+            />
             <p>Actor: {cast.name}</p>
-            <p>Character: {cast.character}</p>
+            {cast.character && <p>Character: {cast.character}</p>}
           </li>
         ))}
       </ul>

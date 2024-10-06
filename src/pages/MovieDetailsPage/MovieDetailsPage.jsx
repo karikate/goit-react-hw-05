@@ -4,27 +4,37 @@ import { fetchMoviesById } from "../../servises/api";
 import s from "./MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
+  const defaultImg =
+    "https://dummyimage.com/400x600/cdcdcd/000.jpg&text=No+poster";
+
   const { movieId } = useParams();
   const [movie, setMovie] = useState();
   useEffect(() => {
+    if (!movieId) return;
     const getMoviesById = async () => {
       const data = await fetchMoviesById(movieId);
       setMovie(data);
     };
     getMoviesById();
   }, [movieId]);
-  // console.log(movie);
 
   if (!movie) {
     return <h2>Loading...</h2>;
   }
   return (
     <div>
-      <img src="" alt="" />
-      <h2>{movie.title}</h2>
+      <img
+        src={
+          movie.poster_path
+            ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+            : defaultImg
+        }
+        width={250}
+        alt="poster"
+      />
+      ;<h2>{movie.title}</h2>
       <p>User Score: {movie.vote_average}</p>
       <p>Overview {movie.overview}</p>
-
       <ul>
         Genres:
         {movie.genres.map((genre) => (

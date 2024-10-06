@@ -4,23 +4,29 @@ import { fetchReviewsById } from "../../servises/api";
 
 const MovieReviews = () => {
   const { movieId } = useParams();
-  const [reviews, setReviews] = useState();
+  const [reviews, setReviews] = useState([]);
   useEffect(() => {
+    if (!movieId) return;
     const getReviewsById = async () => {
       const data = await fetchReviewsById(movieId);
       setReviews(data);
     };
     getReviewsById();
   }, [movieId]);
-  console.log(reviews);
+
   if (!reviews) {
     return <h2>Loading...</h2>;
   }
   return (
     <div>
-      xrtcyvub
-      <h4>Username: {reviews.author}</h4>
-      {/* <p>{movie.content}</p> */}
+      <ul>
+        {reviews.map((review) => (
+          <li key={review.id}>
+            <h4>Username: {review.author}</h4>
+            <p>{review.content}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
