@@ -26,7 +26,6 @@ const MoviesPage = () => {
     <div>
       <SearchForm setSearchParams={handleSearch} />
       {movies.length > 0 && <MoveList movies={movies} />}
-      {/* {!movies.length && <p>There are no movies that matched your query</p>} */}
     </div>
   );
 };
