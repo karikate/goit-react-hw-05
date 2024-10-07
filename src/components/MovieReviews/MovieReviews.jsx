@@ -14,9 +14,6 @@ const MovieReviews = () => {
     getReviewsById();
   }, [movieId]);
 
-  if (!reviews) {
-    return <h2>Loading...</h2>;
-  }
   return (
     <div>
       <ul>

@@ -1,4 +1,29 @@
+.wrapperM {
+  margin: 20px;
+}
 .wrapperAddInfo {
   display: flex;
   gap: 20px;
+}
+.wrapperDet {
+  display: flex;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.wrapperInfo {
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  width: 80%;
+  margin-top: 5px;
+  gap: 10px;
+  padding: 5%;
+  font-size: large;
+  text-decoration: none;
+}
+.wrapperOverview {
+  display: flex;
+  flex-direction: column;
 }

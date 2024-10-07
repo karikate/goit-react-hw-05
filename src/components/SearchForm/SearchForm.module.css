@@ -1,0 +1,25 @@
+.wrapperSearchForm {
+  margin: 10px;
+  place-items: center;
+}
+.input {
+  width: 50%;
+
+  background-color: rgba(96, 7, 48, 0.145);
+  place-items: center;
+  border-radius: 30px;
+  border: none;
+  padding: 20px 30px;
+  color: #000000;
+  margin-right: 10px;
+}
+/* .icon {
+  margin-top: 20px;
+  padding: 10px;
+  align-self: center;
+} */
+.button {
+  align-self: center;
+  background-color: transparent;
+  border: none;
+}

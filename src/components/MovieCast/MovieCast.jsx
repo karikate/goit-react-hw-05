@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchCastById } from "../../servises/api";
 import { useParams } from "react-router-dom";
+import s from "./MovieCast.module.css";
 
 const MovieCast = () => {
   const { movieId } = useParams();
@@ -17,7 +18,7 @@ const MovieCast = () => {
   }, [movieId]);
   return (
     <div>
-      <ul>
+      <ul className={s.wrapperCast}>
         {casts.map((cast) => (
           <li key={cast.id}>
             <img
